@@ -31,15 +31,12 @@ if __name__ == '__main__':
 
     layer = nn.Conv2d(in_channels=1, out_channels=20, kernel_size=3, stride=1).to(device)
 
-    print('111111111111111111')
     print(layer) # Conv2d(1, 20, kernel_size=(3, 3), stride=(1, 1))
 
     # 초기 weight 값
-    print('22222222222222222')
     print(type(layer.weight)) # <class 'torch.nn.parameter.Parameter'>
 
     # weight를 numpy로 만들려면 detach가 필요
-    print('33333333333333333')
     print(layer.weight.detach().cpu().numpy().shape) # (20, 1, 3, 3)
 
     # MNISt trina data 가져오기
